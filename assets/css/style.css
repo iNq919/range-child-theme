@@ -407,7 +407,7 @@ footer .wpcf7-checkbox input[type=checkbox]:checked + span::before {
   background: rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(16px);
 }
-@media (max-width: 1210px) {
+@media (min-width: 820.98px) and (max-width: 1210px) {
   .nav-menu--active-content {
     height: 100% !important;
     overflow-y: scroll;
