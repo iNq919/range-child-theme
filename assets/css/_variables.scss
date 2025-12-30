@@ -1,0 +1,54 @@
+@font-face {
+  font-family: 'Clash Grotesk';
+  src: url('../fonts/ClashGrotesk.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter.woff2') format('woff2');
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+$font-primary: "Clash Grotesk", sans-serif;
+$font-secondary: "Inter", sans-serif;
+
+$color-primary: rgba(193, 0, 7, 1);
+$color-secondary: #F5F5F5;
+$color-gray: rgba(233, 234, 235, 1);
+$color-hover: rgba(193, 0, 7, 0.4);
+$color-border: rgba(235, 235, 235, 1);
+$color-button-hover: rgba(193, 0, 7, 0.4);
+$color-text: #4D4C46;
+$color-white: #FFFFFF;
+$color-black: #000000;
+
+$font-size-12px: 0.75rem;
+$font-size-14px: 0.875rem;
+$font-size-16px: 1rem;
+$font-size-18px: 1.125rem;
+$font-size-20px: 1.250rem;
+$font-size-22px: 1.375rem;
+$font-size-24px: 1.500rem;
+$font-size-28px: 1.75rem;
+$font-size-32px: 2rem;
+$font-size-36px: 2.25rem;
+$font-size-40px: 2.5rem;
+$font-size-48px: 3rem;
+$font-size-56px: 3.5rem;
+
+$media-hd: 1670px;
+$media-laptop: 1366.98px;
+$media-tablet: 820.98px;
+$media-mobile: 767.98px;
+$media-mobile-sm: 320px;
+
+$mobile-nav-height: 80px;
+$transition: all .3s ease-in-out;
+
+$filter: brightness(0) saturate(100%) invert(95%) sepia(100%) saturate(2%) hue-rotate(44deg) brightness(108%) contrast(101%);
+$primary-filter: brightness(0) saturate(100%) invert(13%) sepia(98%) saturate(6557%) hue-rotate(354deg) brightness(74%) contrast(108%);
