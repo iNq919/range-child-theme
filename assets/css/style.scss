@@ -666,6 +666,7 @@ body.is-dark {
         }
 
         .categories-menu-widget {
+          display: flex;
           flex-direction: column;
           padding: 0;
           overflow: auto;

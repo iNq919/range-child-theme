@@ -790,6 +790,7 @@ body.is-dark .theme-toggle .icon-dark {
     margin-block-start: 0 !important;
   }
   .nav-menu .e-n-menu-content.e-active .categories-menu-widget {
+    display: flex;
     flex-direction: column;
     padding: 0;
     overflow: auto;
