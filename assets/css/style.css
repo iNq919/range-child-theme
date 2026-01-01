@@ -115,6 +115,7 @@ p {
 .wpcf7-column label {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 100%;
 }
 .wpcf7-column input {
@@ -196,15 +197,15 @@ p {
   transition: all 0.3s ease-in-out;
   outline: none;
 }
+.wpcf7-full-width.button p button[type=submit]:hover, .wpcf7-full-width.button p button[type=submit]:focus {
+  gap: 20px;
+  transition: all 0.3s ease-in-out;
+}
 .wpcf7-full-width.button p svg {
   display: block;
   width: 18px;
   height: 18px;
   stroke: currentColor;
-}
-.wpcf7-full-width.button p:hover {
-  gap: 15px;
-  transition: all 0.3s ease-in-out;
 }
 .wpcf7 .wpcf7-checkbox {
   position: relative;
@@ -423,23 +424,36 @@ footer .wpcf7-checkbox input[type=checkbox]:checked + span::before {
   background: rgba(0, 0, 0, 0.32);
   backdrop-filter: blur(16px);
 }
-.nav-menu--scrolled .elementor-element-6e07e19 {
-  padding-bottom: 0;
+.nav-menu--scrolled .menu-parent {
+  gap: 0;
   transition: all 0.3s ease-in-out;
+}
+.nav-menu--scrolled .menu-parent .top-insider {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
 }
 .nav-menu--scrolled .menu-parent .insider .menu {
   background: transparent !important;
   backdrop-filter: unset !important;
   transition: all 0.3s ease-in-out;
 }
+.nav-menu .menu-parent .top-insider {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
 .nav-menu .menu-parent .insider .menu {
   background: rgba(0, 0, 0, 0.32);
-  backdrop-filter: blur(16px);
   transition: all 0.3s ease-in-out;
   transform: skew(-10deg, 0deg);
 }
 .nav-menu .menu-parent .insider .menu nav {
   transform: skew(10deg, 0deg);
+}
+.nav-menu .menu-parent .insider .menu nav .e-n-menu-title-text {
+  line-height: 28px;
 }
 
 .theme-toggle {
@@ -622,11 +636,23 @@ body.is-dark .theme-toggle .icon-dark {
   width: fit-content;
 }
 
+.faq-section .elementor-button-content-wrapper {
+  white-space: pre;
+}
+
 .elementor-widget-n-accordion .e-n-accordion-item[open] > .e-n-accordion-item-title .e-n-accordion-item-title-icon span > svg,
 .elementor-widget-n-accordion .e-n-accordion-item:not([open]):hover > .e-n-accordion-item-title .e-n-accordion-item-title-icon span > svg,
 .elementor-widget-n-menu .e-n-menu-title:not(.e-current):not(:hover) .e-n-menu-dropdown-icon svg,
 .elementor-widget-n-menu .e-n-menu-title:hover:not(.e-current) .e-n-menu-dropdown-icon svg {
   fill: none !important;
+}
+
+.elementor-icon-list-items a {
+  transition: all 0.3s ease-in-out;
+}
+.elementor-icon-list-items a:hover, .elementor-icon-list-items a:focus {
+  color: rgb(193, 0, 7);
+  transition: all 0.3s ease-in-out;
 }
 
 .elementor-widget-n-accordion .e-n-accordion-item-title-icon {
@@ -846,6 +872,9 @@ body.is-dark .theme-toggle .icon-dark {
   }
   .menu-parent .insider .menu nav {
     transform: skew(0deg, 0deg);
+  }
+  .faq-section .elementor-button-content-wrapper {
+    white-space: unset;
   }
   .front-categories {
     overflow: visible !important;

@@ -58,6 +58,7 @@
     label {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       height: 100%;
     }
 
@@ -154,6 +155,11 @@
           line-height: 24px;
           transition: $transition;
           outline: none;
+
+          &:hover, &:focus {
+            gap: 20px;
+            transition: $transition;
+          }
         }
 
         svg {
@@ -161,11 +167,6 @@
           width: 18px;
           height: 18px;
           stroke: currentColor;
-        }
-
-        &:hover {
-          gap: 15px;
-          transition: $transition;
         }
       }
     }

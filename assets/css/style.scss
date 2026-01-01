@@ -160,33 +160,46 @@ p {
     background: rgba(0, 0, 0, 0.32);
     backdrop-filter: blur(16px);
 
-    .elementor-element-6e07e19 {
-      padding-bottom: 0;
-      transition: $transition;
-    }
-
     .menu-parent {
+      gap: 0;
+      transition: $transition;
+      
+      .top-insider {
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none;
+      }
+
       .insider {
         .menu {
           background: transparent !important;
           backdrop-filter: unset !important;
           transition: $transition;
-
         }
       }
     }
   }
 
   .menu-parent {
+    .top-insider {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: $transition;
+    }
+
     .insider {
       .menu {
         background: rgba(0, 0, 0, 0.32);
-        backdrop-filter: blur(16px);
         transition: $transition;
         transform: skew(-10deg, 0deg);
 
         nav {
           transform: skew(10deg, 0deg);
+
+          .e-n-menu-title-text {
+            line-height: 28px;
+          }
         }
       }
     }
@@ -437,11 +450,29 @@ body.is-dark {
   }
 }
 
+.faq-section {
+  .elementor-button-content-wrapper {
+    white-space: pre;
+  }
+}
+
 .elementor-widget-n-accordion .e-n-accordion-item[open]>.e-n-accordion-item-title .e-n-accordion-item-title-icon span>svg,
 .elementor-widget-n-accordion .e-n-accordion-item:not([open]):hover>.e-n-accordion-item-title .e-n-accordion-item-title-icon span>svg,
 .elementor-widget-n-menu .e-n-menu-title:not(.e-current):not(:hover) .e-n-menu-dropdown-icon svg,
 .elementor-widget-n-menu .e-n-menu-title:hover:not(.e-current) .e-n-menu-dropdown-icon svg {
   fill: none !important;
+}
+
+.elementor-icon-list-items {
+  a {
+    transition: $transition;
+
+    &:hover,
+    &:focus {
+      color: $color-primary;
+      transition: $transition;
+    }
+  }
 }
 
 .elementor-widget-n-accordion {
@@ -748,6 +779,11 @@ body.is-dark {
     }
   }
 
+  .faq-section {
+    .elementor-button-content-wrapper {
+      white-space: unset;
+    }
+  }
 
   .front-categories {
     overflow: visible !important;
@@ -839,7 +875,7 @@ body.is-dark {
 
   footer .elementor-nav-menu__align-end .elementor-nav-menu--layout-vertical>ul>li>a {
     justify-content: flex-start;
-}
+  }
 }
 
 @media (max-width: $media-mobile) {}
