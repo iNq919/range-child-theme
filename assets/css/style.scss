@@ -10,6 +10,7 @@ html {
 
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 body,
@@ -163,7 +164,7 @@ p {
     .menu-parent {
       gap: 0;
       transition: $transition;
-      
+
       .top-insider {
         opacity: 0 !important;
         visibility: hidden !important;
@@ -197,8 +198,19 @@ p {
         nav {
           transform: skew(10deg, 0deg);
 
-          .e-n-menu-title-text {
-            line-height: 28px;
+          .e-n-menu-wrapper {
+            .e-n-menu-title {
+              transition: $transition;
+
+              &:hover,
+              &:focus {
+                transition: $transition;
+              }
+
+              .e-n-menu-title-text {
+                line-height: 28px;
+              }
+            }
           }
         }
       }
@@ -606,6 +618,64 @@ body.is-dark {
         filter: $filter;
         transform: rotate(0deg) !important;
       }
+    }
+  }
+}
+
+.elementor-button,
+.elementor-button-content-wrapper {
+  position: relative;
+}
+
+.elementor-button .elementor-button-content-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  transition: $transition;
+  pointer-events: none;
+  padding-right: 10px;
+}
+
+.elementor-element[data-id="8d5bf4c"] {
+  .elementor-button .elementor-button-content-wrapper::before {
+    background: $color-white;
+  }
+
+  .elementor-button:hover {
+    .elementor-button-content-wrapper {
+      padding-left: 35px;
+    }
+
+    .elementor-button-content-wrapper::before {
+      width: 25px;
+      opacity: 1;
+    }
+  }
+}
+
+.elementor-element[data-id="8866375"],
+.e-loop-item,
+.elementor-element[data-id="fb2e569"],
+.elementor-element[data-id="9574ec6"],
+.elementor-element[data-id="9dade6a"] {
+  .elementor-button .elementor-button-content-wrapper::before {
+    background: $color-primary;
+  }
+
+  .elementor-button:hover {
+    .elementor-button-content-wrapper {
+      padding-left: 35px;
+    }
+
+    .elementor-button-content-wrapper::before {
+      width: 25px;
+      opacity: 1;
     }
   }
 }

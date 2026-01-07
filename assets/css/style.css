@@ -22,6 +22,7 @@ html {
 
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
 body,
@@ -197,9 +198,22 @@ p {
   transition: all 0.3s ease-in-out;
   outline: none;
 }
+.wpcf7-full-width.button p button[type=submit]::before {
+  content: "";
+  width: 0;
+  height: 2px;
+  background: #FFFFFF;
+  opacity: 0;
+  transform-origin: left center;
+  transition: all 0.3s ease-in-out;
+}
 .wpcf7-full-width.button p button[type=submit]:hover, .wpcf7-full-width.button p button[type=submit]:focus {
   gap: 20px;
   transition: all 0.3s ease-in-out;
+}
+.wpcf7-full-width.button p button[type=submit]:hover::before, .wpcf7-full-width.button p button[type=submit]:focus::before {
+  width: 30px;
+  opacity: 1;
 }
 .wpcf7-full-width.button p svg {
   display: block;
@@ -452,7 +466,13 @@ footer .wpcf7-checkbox input[type=checkbox]:checked + span::before {
 .nav-menu .menu-parent .insider .menu nav {
   transform: skew(10deg, 0deg);
 }
-.nav-menu .menu-parent .insider .menu nav .e-n-menu-title-text {
+.nav-menu .menu-parent .insider .menu nav .e-n-menu-wrapper .e-n-menu-title {
+  transition: all 0.3s ease-in-out;
+}
+.nav-menu .menu-parent .insider .menu nav .e-n-menu-wrapper .e-n-menu-title:hover, .nav-menu .menu-parent .insider .menu nav .e-n-menu-wrapper .e-n-menu-title:focus {
+  transition: all 0.3s ease-in-out;
+}
+.nav-menu .menu-parent .insider .menu nav .e-n-menu-wrapper .e-n-menu-title .e-n-menu-title-text {
   line-height: 28px;
 }
 
@@ -750,6 +770,60 @@ body.is-dark .theme-toggle .icon-dark {
 .gt_float_switcher .gt-selected .gt-current-lang .gt_float_switcher-arrow {
   filter: brightness(0) saturate(100%) invert(95%) sepia(100%) saturate(2%) hue-rotate(44deg) brightness(108%) contrast(101%);
   transform: rotate(0deg) !important;
+}
+
+.elementor-button,
+.elementor-button-content-wrapper {
+  position: relative;
+}
+
+.elementor-button .elementor-button-content-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 0;
+  height: 2px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  transition: all 0.3s ease-in-out;
+  pointer-events: none;
+  padding-right: 10px;
+}
+
+.elementor-element[data-id="8d5bf4c"] .elementor-button .elementor-button-content-wrapper::before {
+  background: #FFFFFF;
+}
+.elementor-element[data-id="8d5bf4c"] .elementor-button:hover .elementor-button-content-wrapper {
+  padding-left: 35px;
+}
+.elementor-element[data-id="8d5bf4c"] .elementor-button:hover .elementor-button-content-wrapper::before {
+  width: 25px;
+  opacity: 1;
+}
+
+.elementor-element[data-id="8866375"] .elementor-button .elementor-button-content-wrapper::before,
+.e-loop-item .elementor-button .elementor-button-content-wrapper::before,
+.elementor-element[data-id=fb2e569] .elementor-button .elementor-button-content-wrapper::before,
+.elementor-element[data-id="9574ec6"] .elementor-button .elementor-button-content-wrapper::before,
+.elementor-element[data-id="9dade6a"] .elementor-button .elementor-button-content-wrapper::before {
+  background: rgb(193, 0, 7);
+}
+.elementor-element[data-id="8866375"] .elementor-button:hover .elementor-button-content-wrapper,
+.e-loop-item .elementor-button:hover .elementor-button-content-wrapper,
+.elementor-element[data-id=fb2e569] .elementor-button:hover .elementor-button-content-wrapper,
+.elementor-element[data-id="9574ec6"] .elementor-button:hover .elementor-button-content-wrapper,
+.elementor-element[data-id="9dade6a"] .elementor-button:hover .elementor-button-content-wrapper {
+  padding-left: 35px;
+}
+.elementor-element[data-id="8866375"] .elementor-button:hover .elementor-button-content-wrapper::before,
+.e-loop-item .elementor-button:hover .elementor-button-content-wrapper::before,
+.elementor-element[data-id=fb2e569] .elementor-button:hover .elementor-button-content-wrapper::before,
+.elementor-element[data-id="9574ec6"] .elementor-button:hover .elementor-button-content-wrapper::before,
+.elementor-element[data-id="9dade6a"] .elementor-button:hover .elementor-button-content-wrapper::before {
+  width: 25px;
+  opacity: 1;
 }
 
 @media (max-width: 820.98px) {
