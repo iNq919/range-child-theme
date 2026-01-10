@@ -495,12 +495,6 @@ body.is-dark .theme-toggle .icon-dark {
   opacity: 1;
 }
 
-.elementor-element.hero-section {
-  position: relative;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden;
-}
 .elementor-element.hero-section::before {
   content: "";
   position: absolute;
@@ -824,6 +818,19 @@ body.is-dark .theme-toggle .icon-dark {
 .elementor-element[data-id="9dade6a"] .elementor-button:hover .elementor-button-content-wrapper::before {
   width: 25px;
   opacity: 1;
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+.hero-section .elementor-background-video-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.hero-section .elementor-background-video-container video {
+  display: block;
 }
 
 @media (max-width: 820.98px) {

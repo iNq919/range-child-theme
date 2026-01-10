@@ -244,11 +244,6 @@ body.is-dark {
 }
 
 .elementor-element.hero-section {
-  position: relative;
-  width: 100% !important;
-  height: 100% !important;
-  overflow: hidden;
-
   &::before {
     content: '';
     position: absolute;
@@ -676,6 +671,21 @@ body.is-dark {
     .elementor-button-content-wrapper::before {
       width: 25px;
       opacity: 1;
+    }
+  }
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+
+  .elementor-background-video-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+    video {
+      display: block;
     }
   }
 }

@@ -147,4 +147,36 @@ document.addEventListener('DOMContentLoaded', () => {
       applyTheme(e.newValue, false);
     });
   })();
+
+const HERO_SELECTOR = '.hero-section';
+const VIDEO_SELECTOR = '.elementor-background-video-hosted';
+
+    function forceHeroVideoCover() {
+        const hero = document.querySelector(HERO_SELECTOR);
+        const video = hero ? hero.querySelector(VIDEO_SELECTOR) : null;
+
+        if (!hero || !video) {
+            return;
+        }
+
+        const heroHeight = hero.offsetHeight;
+        const heroWidth = hero.offsetWidth;
+
+        video.removeAttribute('style');
+
+        video.style.width = heroWidth + 'px';
+        video.style.height = heroHeight + 'px';
+
+        video.style.position = 'absolute';
+        video.style.top = '50%';
+        video.style.left = '50%';
+        video.style.transform = 'translate(-50%, -50%) scale(1.15)';
+        video.style.pointerEvents = 'none';
+    }
+
+    setTimeout(forceHeroVideoCover, 100);
+    setTimeout(forceHeroVideoCover, 500);
+    setTimeout(forceHeroVideoCover, 1000);
+
+    window.addEventListener('resize', forceHeroVideoCover);
 });
